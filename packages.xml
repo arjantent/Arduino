@@ -56812,7 +56812,7 @@
         <entry key="numpee" value="" />
         <entry key="numpngw" value="" />
         <entry key="numprops" value="" />
-        <entry key="numpy" value="" />
+        <entry key="numpy" value="1.11.2" />
         <entry key="numpy-indexed" value="" />
         <entry key="numpy-mkl" value="" />
         <entry key="numpy-pypy" value="" />
@@ -60781,7 +60781,7 @@
         <entry key="pioneer" value="" />
         <entry key="pioneeravclient" value="" />
         <entry key="pior" value="" />
-        <entry key="pip" value="" />
+        <entry key="pip" value="8.1.2" />
         <entry key="pip-Win" value="" />
         <entry key="pip-accel" value="" />
         <entry key="pip-autoremove" value="" />
@@ -73354,7 +73354,7 @@
         <entry key="requestions" value="" />
         <entry key="requeston" value="" />
         <entry key="requestry" value="" />
-        <entry key="requests" value="" />
+        <entry key="requests" value="2.11.1" />
         <entry key="requests-aeaweb" value="" />
         <entry key="requests-aliyun" value="" />
         <entry key="requests-auth-mashery" value="" />
@@ -76627,7 +76627,7 @@
         <entry key="setupreader" value="" />
         <entry key="setuptize_me" value="" />
         <entry key="setuptool" value="" />
-        <entry key="setuptools" value="" />
+        <entry key="setuptools" value="28.7.1" />
         <entry key="setuptools-bower" value="" />
         <entry key="setuptools-ci" value="" />
         <entry key="setuptools-clonedigger" value="" />
@@ -80678,7 +80678,7 @@
         <entry key="structure" value="" />
         <entry key="structure_threader" value="" />
         <entry key="structured" value="" />
-        <entry key="structures" value="" />
+        <entry key="structures" value="2.0.2" />
         <entry key="strudel" value="" />
         <entry key="strudelpy" value="" />
         <entry key="strum" value="" />
@@ -83523,7 +83523,7 @@
         <entry key="tk.phpautodoc" value="" />
         <entry key="tk0.gaerunner" value="" />
         <entry key="tk64" value="" />
-        <entry key="tkFontChooser" value="" />
+        <entry key="tkFontChooser" value="1.0.0" />
         <entry key="tkPickaColor" value="" />
         <entry key="tk_nosy" value="" />
         <entry key="tkbak" value="" />
