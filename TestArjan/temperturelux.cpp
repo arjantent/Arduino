@@ -22,29 +22,18 @@ void loop(void) {
     voltage = getVoltage(temperaturePin);
     degreesC = (voltage - 0.5) * 100.0;
 
-    Serial.print("Temperatuur in C");
+    Serial.print("Temperatuur in C:  ");
     Serial.print(degreesC);
-    Serial.print("Lichtintensiteit ");
+    Serial.print('\n');
+    Serial.print("Lichtintensiteit:  ");
     Serial.print(photocellReading);     // the raw analog reading
+    Serial.print('\n');
+    Serial.print('\n');
 
+    delay(10000);
+}
 
-    float getVoltage(int pin)
-    {
-        return (analogRead(pin) * 0.004882814);
-    }
-
-
-    // We'll have a few threshholds, qualitatively determined
-    if (photocellReading < 10) {
-        Serial.println(" - Dark");
-    } else if (photocellReading < 200) {
-        Serial.println(" - Dim");
-    } else if (photocellReading < 500) {
-        Serial.println(" - Light");
-    } else if (photocellReading < 800) {
-        Serial.println(" - Bright");
-    } else {
-        Serial.println(" - Very bright");
-    }
-    delay(1000);
+float getVoltage(int pin)
+{
+    return (analogRead(pin) * 0.004882814);
 }
