@@ -27,15 +27,15 @@ void loop(void) {
 
 
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 41; i++) {
        counter += 1;
        averageLight += photocellReading;
        averageTemp += degreesC;
        delay(1000);
 
-       if (counter== 5) {
+       if (counter == 30) {
           Serial.print("Gemiddelde lichtintensiteit afgelopen 30sec in Lux: ");
-          Serial.print(averageLight / 5);
+          Serial.print(averageLight / 30);
           Serial.print('\n');
           counter=0;
           averageLight=0;
@@ -54,7 +54,7 @@ void loop(void) {
     
     // print gemiddelde temp in afgelopen 40sec in C
     Serial.print("Gemiddelde temperatuur afgelopen 40 sec in C:  ");
-    Serial.print(averageTemp / 10);
+    Serial.print(averageTemp / 40);
     Serial.print('\n');
     averageTemp = 0;
 
