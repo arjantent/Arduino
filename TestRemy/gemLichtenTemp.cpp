@@ -24,7 +24,7 @@ void loop(void) {
     voltage = getVoltage(temperaturePin);
     degreesC = (voltage - 0.5) * 100.0;
 
-    for(float i = 0 ; i < 41; i++) {
+    for(int i = 0 ; i < 41; i++) {
         averageTemp += degreesC;
         delay(1000);
     }
