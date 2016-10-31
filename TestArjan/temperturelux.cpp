@@ -1,5 +1,12 @@
 /* Photocell and temperture
 
+ #5V naar breadboard. rechts
+ #GRN naar breadboard. Links
+
+ #TMP sensor naar onze kant toe. Links kabel naar 5v, midden kabel naar Analog1. Rechts 680 ohm naar grnd
+ #Lichtsensor, links kabel naar a0. Daarachter 10k ohm naar grnd. rechts kabel naar 5v.
+
+
 Connect one end of the photocell to 5V, the other end to Analog 0.
 Then connect one end of a 10K resistor from Analog 0 to ground
  */
@@ -22,29 +29,18 @@ void loop(void) {
     voltage = getVoltage(temperaturePin);
     degreesC = (voltage - 0.5) * 100.0;
 
-    Serial.print("Temperatuur in C");
+    Serial.print("Temperatuur in C:  ");
     Serial.print(degreesC);
-    Serial.print("Lichtintensiteit ");
+    Serial.print('\n');
+    Serial.print("Lichtintensiteit:  ");
     Serial.print(photocellReading);     // the raw analog reading
+    Serial.print('\n');
+    Serial.print('\n');
 
+    delay(10000);
+}
 
-    float getVoltage(int pin)
-    {
-        return (analogRead(pin) * 0.004882814);
-    }
-
-
-    // We'll have a few threshholds, qualitatively determined
-    if (photocellReading < 10) {
-        Serial.println(" - Dark");
-    } else if (photocellReading < 200) {
-        Serial.println(" - Dim");
-    } else if (photocellReading < 500) {
-        Serial.println(" - Light");
-    } else if (photocellReading < 800) {
-        Serial.println(" - Bright");
-    } else {
-        Serial.println(" - Very bright");
-    }
-    delay(1000);
+float getVoltage(int pin)
+{
+    return (analogRead(pin) * 0.004882814);
 }
