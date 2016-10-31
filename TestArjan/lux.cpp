@@ -17,22 +17,8 @@ void setup(void) {
 void loop(void) {
     photocellReading = analogRead(photocellPin);
 
-    float voltage,degreesC;
-
-    voltage = getVoltage(temperaturePin);
-    degreesC = (voltage - 0.5) * 100.0;
-
-    Serial.print("Temperatuur in C");
-    Serial.print(degreesC);
     Serial.print("Lichtintensiteit ");
     Serial.print(photocellReading);     // the raw analog reading
-
-
-    float getVoltage(int pin)
-    {
-        return (analogRead(pin) * 0.004882814);
-    }
-
 
     // We'll have a few threshholds, qualitatively determined
     if (photocellReading < 10) {
