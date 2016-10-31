@@ -1,5 +1,12 @@
 /* Photocell and temperture
 
+ #5V naar breadboard. rechts
+ #GRN naar breadboard. Links
+
+ #TMP sensor naar onze kant toe. Links kabel naar 5v, midden kabel naar Analog1. Rechts 680 ohm naar grnd
+ #Lichtsensor, links kabel naar a0. Daarachter 10k ohm naar grnd. rechts kabel naar 5v.
+
+
 Connect one end of the photocell to 5V, the other end to Analog 0.
 Then connect one end of a 10K resistor from Analog 0 to ground
  */
