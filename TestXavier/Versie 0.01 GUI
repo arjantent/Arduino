@@ -1,0 +1,33 @@
+from tkinter import *
+
+
+root = Tk()
+
+
+# Checkbutton #
+
+var1 = IntVar()
+Checkbutton(root, text=" ", variable=var1, onvalue= 1, offvalue= 0, pady=20).grid(row=0, column=0, columnspan=2)
+
+# Labels #
+
+Extend_Label = Label(root, text="Uitrol afstand", pady=20).grid(row=1, column=0, sticky=E)
+Retract_Label = Label(root, text="Inrol afstand", pady=20).grid(row=2, column=0, sticky=E)
+Temperture_Label = Label(root, text="Temperatuur Trigger", pady=20).grid(row=3, column=0, sticky=E)
+LightIntensity_Label = Label(root, text="Lichtintensiteit Trigger", pady=20).grid(row=4, column=0, sticky=E)
+
+
+# Entry #
+
+Extend_Entry = Entry(root).grid(row=1, column=1, sticky=E)
+Retract_Entry = Entry(root).grid(row=2, column=1, sticky=E)
+Temperture_Entry = Entry(root).grid(row=3, column=1, sticky=E)
+LightIntensity_Entry = Entry(root).grid(row=4, column=1, sticky=E)
+
+# Buttons
+
+A = Button(root, text ="Inrollen", padx=10, pady=20).grid(row=5, column=0)
+B = Button(root, text ="Uitrollen", padx=10, pady=20).grid(row=5, column=1)
+
+
+root.mainloop()
