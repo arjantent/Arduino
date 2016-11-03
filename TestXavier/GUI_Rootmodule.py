@@ -1,5 +1,7 @@
+# Begin of Imports #
 from GUI_Unitmodule import Unit
 from tkinter import *
+# End of Imports #
 
 
 
