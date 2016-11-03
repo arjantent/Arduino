@@ -2,23 +2,23 @@ from tkinter import *
 
 
 class Unit:
-    def __init__(self, master, checkbutton):
+    def __init__(self, master):
         self.frame1 = Frame(master)     #Frame voor labels, buttons, entries
-        self.frame1.pack()
+        self.frame1.pack(side = LEFT)
         print("test frame")
 
         # Checkbutton #
 
         self.var1 = IntVar()
-        self.checkbutton = checkbutton(self.frame1, text="Automatisch", variable=self.var1, onvalue= 1, offvalue= 0, pady=20).grid(row=0, column=0, sticky=E)
+        self.checkbutton = Checkbutton(self.frame1, text="Automatisch", variable=self.var1, onvalue= 1, offvalue= 0, pady=20, padx=70).grid(row=0, column=0, columnspan=2,  sticky=E)
         print("test checkbutton")
 
         # Labels #
 
-        self.Extend_Label = Label(self.frame1, text="Uitrol afstand", pady=20).grid(row=2, column=0, sticky=E)
-        self.Retract_Label = Label(self.frame1, text="Inrol afstand", pady=20).grid(row=3, column=0, sticky=E)
-        self.Temperture_Label = Label(self.frame1, text="Temperatuur Trigger", pady=20).grid(row=4, column=0, sticky=E)
-        self.LightIntensity_Label = Label(self.frame1, text="Lichtintensiteit Trigger", pady=20).grid(row=5, column=0, sticky=E)
+        self.Extend_Label = Label(self.frame1, text="Uitrol afstand", pady=20, padx=10).grid(row=2, column=0, sticky=E)
+        self.Retract_Label = Label(self.frame1, text="Inrol afstand", pady=20, padx=10).grid(row=3, column=0, sticky=E)
+        self.Temperture_Label = Label(self.frame1, text="Temperatuur Trigger", pady=20, padx=10).grid(row=4, column=0, sticky=E)
+        self.LightIntensity_Label = Label(self.frame1, text="Lichtintensiteit Trigger", pady=20, padx=10).grid(row=5, column=0, sticky=E)
         print("test label")
 
         # Entry #

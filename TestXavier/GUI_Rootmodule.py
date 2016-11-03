@@ -12,8 +12,7 @@ class GUI_Root:
 
         rootframe = Frame(window, width=1800, height=750)
         rootframe.pack()
-
-        Unit(rootframe)
-
+        for y in range(0, 5):
+            Unit(rootframe)
 
         window.mainloop()
