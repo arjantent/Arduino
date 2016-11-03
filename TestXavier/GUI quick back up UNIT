@@ -1,0 +1,55 @@
+from tkinter import *
+
+# test import voor graph #
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.figure import Figure
+import matplotlib
+matplotlib.use("TkAgg")
+# test import voor graph #
+
+
+
+
+
+class Unit:
+    def __init__(self, master):
+        self.frame1 = Frame(master)     #Frame voor labels, buttons, entries
+        self.frame1.pack(side=LEFT)
+        print("test frame")
+
+        # Checkbutton #
+
+        # self.var1 = IntVar()   --- variable=self.var1      (back-up code)
+        self.checkbutton = Checkbutton(self.frame1, text="Automatisch", onvalue=1, pady=20, padx=70).grid(row=0, column=0, columnspan=2,  sticky=E)
+        print("test checkbutton")
+
+        # Labels #
+
+        self.Extend_Label = Label(self.frame1, text="Uitrol afstand", pady=20, padx=10).grid(row=2, column=0, sticky=E)
+        self.Retract_Label = Label(self.frame1, text="Inrol afstand", pady=20, padx=10).grid(row=3, column=0, sticky=E)
+        self.Temperture_Label = Label(self.frame1, text="Temperatuur Trigger", pady=20, padx=10).grid(row=4, column=0, sticky=E)
+        self.LightIntensity_Label = Label(self.frame1, text="Lichtintensiteit Trigger", pady=20, padx=10).grid(row=5, column=0, sticky=E)
+
+        print("test label")
+
+        # Entry #
+
+        self.Extend_Entry = Entry(self.frame1).grid(row=2, column=1, sticky=E)
+        self.Retract_Entry = Entry(self.frame1).grid(row=3, column=1, sticky=E)
+        self.Temperture_Entry = Entry(self.frame1).grid(row=4, column=1, sticky=E)
+        self.LightIntensity_Entry = Entry(self.frame1).grid(row=5, column=1, sticky=E)
+        print("test entry")
+        # Buttons
+
+        self.A = Button(self.frame1, text="Inrollen", padx=10, pady=20).grid(row=6, column=0, sticky=E)
+        self.B = Button(self.frame1, text="Uitrollen", padx=10, pady=20).grid(row=6, column=1, sticky=W)
+        print("test button")
+
+        # test graph code #
+        f = Figure(figsize=(5,5), dpi=100)
+        a = f.add_subplot(111)
+        a.plot([1, 2, 3, 4, 5, 6, 7, 8], [5, 6, 1, 7, 4, 2, 5, 0])
+
+        canvas = FigureCanvasTkAgg(f, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=LEFT)
