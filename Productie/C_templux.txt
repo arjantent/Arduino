@@ -1,0 +1,76 @@
+void loop()
+{ 
+
+  ldrReading = analogRead(ldrPin);
+  float voltage,degreesC;
+  voltage = getVoltage(temperaturePin);
+  degreesC = (voltage - 0.5) * 100.0;
+
+  // geef huidige tijd
+  unsigned long currentMillis = millis();
+
+  // lees waarde van LDR per seconde en stop het in de variabele averageLight
+  if((unsigned long)(currentMillis - previousMillis1) >= interval1){
+    previousMillis1 = currentMillis;
+    countLight += ldrReading;
+    countTemp += degreesC;
+    delay(1000);
+
+  if((unsigned long)(currentMillis - previousMillis20) >= interval20) {
+    Serial.print(averageLight);
+    Serial.print(",");
+    Serial.print(averageTemp);
+    Serial.print("\n");
+    
+    
+    previousMillis20 = currentMillis;
+  }
+  }
+  if((unsigned long)(currentMillis - previousMillis10) >= interval10){
+    averageLight = countLight / 10;
+    countLight = 0;
+    previousMillis10 = currentMillis;
+  }
+  if((unsigned long)(currentMillis - previousMillis15) >= interval15) {
+    previousMillis15 = currentMillis;
+    averageTemp = countTemp / 15;
+    countTemp = 0;
+  }
+
+  if (Serial.available()) {
+        char serialListener = Serial.read();
+        if (serialListener == 'H') {
+            digitalWrite(ledGroen, HIGH);
+        }
+        else if (serialListener == 'L') {
+            digitalWrite(ledGroen, LOW);
+        }
+        else if (serialListener == 'A') {
+            digitalWrite(ledRood, HIGH);
+        }
+        else if (serialListener == 'U') {
+            digitalWrite(ledRood, LOW);
+        }
+        else if (serialListener == 'Q') {
+            digitalWrite(ledGeel, HIGH);
+        }
+        else if (serialListener == 'W') {
+            digitalWrite(ledGeel, LOW);
+        }
+        else if (serialListener == 'N') {
+            digitalWrite(ledGeel, HIGH);
+        }
+        else if (serialListener == 'M') {
+            digitalWrite(ledGeel, LOW);
+        }
+
+  }
+
+
+}
+
+
+float getVoltage(int pin)
+{
+  return (analogRead(pin) * 0.004882814);
+}
