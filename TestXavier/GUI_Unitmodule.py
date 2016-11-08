@@ -22,8 +22,9 @@ class Unit:
         self.uitrollen = StringVar()
         self.inrollen = StringVar()
 
-        def uitrolafstand():
+        # Begin Uit- en Inrolafstanden input #
 
+        def uitrolafstand():
             try:
                 self.uitrolwaarde = int(self.uitrollen.get())
                 print(self.uitrolwaarde)
@@ -32,7 +33,6 @@ class Unit:
                 print("INTEGER KUT")
 
         def inrolafstand():
-
             try:
                 self.inrolwaarde = int(self.inrollen.get())
                 print(self.inrolwaarde)
@@ -40,10 +40,11 @@ class Unit:
             except ValueError:
                 print("INTEGER KUT")
 
-
         def submitten():
             uitrolafstand()
             inrolafstand()
+
+            # Einde Uit- en Inrolafstanden input #
 
         # Checkbutton #
 
@@ -96,5 +97,3 @@ class Unit:
         # status bar #
 #Todo : zorg dat de status txt wordt geupdate afhankelijk van de status van de lampjes (groen/bewegend/rood)
         self.status = Label(self.frame1, text="status text", bd=2, relief=SUNKEN, pady=15, padx=50).grid(row=9, column=0, columnspan=2)
-
-
