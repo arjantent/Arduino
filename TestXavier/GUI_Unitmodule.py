@@ -22,6 +22,9 @@ class Unit:
         self.uitrollen = StringVar()
         self.inrollen = StringVar()
 
+        self.temperatuur = StringVar()
+        self.lichtint = StringVar()
+
         # Begin Uit- en Inrolafstanden input #
 
         def uitrolafstand():
@@ -44,6 +47,27 @@ class Unit:
             uitrolafstand()
             inrolafstand()
 
+        def temperatuur():
+            try:
+                self.temperatuurwaarde = int(self.temperatuur.get())
+                print(self.temperatuurwaarde)
+                return
+            except ValueError:
+                print("Verkeerde waarde")
+
+        def lichtint():
+            try:
+                self.lichtwaarde = int(self.lichtint.get())
+                print(self.lichtwaarde)
+                return
+            except ValueError:
+                print("Verkeerde waarde")
+
+        def submitten2():
+            temperatuur()
+            lichtint()
+
+
             # Einde Uit- en Inrolafstanden input #
 
         # Checkbutton #
@@ -62,15 +86,15 @@ class Unit:
         # Entry #
         self.Extend_Entry = Entry(self.frame1, textvariable=self.uitrollen).grid(row=2, column=1, sticky=W)
         self.Retract_Entry = Entry(self.frame1, textvariable=self.inrollen).grid(row=3, column=1, sticky=W)
-        self.Temperture_Entry = Entry(self.frame1).grid(row=5, column=1, sticky=W)
-        self.LightIntensity_Entry = Entry(self.frame1).grid(row=6, column=1, sticky=W)
+        self.Temperture_Entry = Entry(self.frame1, textvariable=self.temperatuur).grid(row=5, column=1, sticky=W)
+        self.LightIntensity_Entry = Entry(self.frame1, textvariable=self.lichtint).grid(row=6, column=1, sticky=W)
         print("test entry")
 
         # Buttons #
-        self.A = Button(self.frame1, text="Inrollen", padx=10, pady=20).grid(row=7, column=0, sticky=E)   # inrol knop
-        self.B = Button(self.frame1, text="Uitrollen", padx=10, pady=20).grid(row=7, column=1, sticky=W)  # uitrol knop
-        self.C = Button(self.frame1, text="Submit", padx=10, pady=5, command=submitten).grid(row=4, column=0, sticky=E)      # submit knop
-
+        self.A = Button(self.frame1, text="Inrollen", padx=10, pady=20).grid(row=8, column=0, sticky=E)                     # inrol knop
+        self.B = Button(self.frame1, text="Uitrollen", padx=10, pady=20).grid(row=8, column=1, sticky=W)                    # uitrol knop
+        self.C = Button(self.frame1, text="Submit", padx=10, pady=5, command=submitten).grid(row=4, column=0, sticky=E, columnspan=2)     # submit knop
+        self.D = Button(self.frame1, text="Submit", padx=10, pady=5, command=submitten2).grid(row=7, column=0, sticky=E, columnspan=2)    # submit knop 2
 
 
         print("test button")
@@ -92,8 +116,8 @@ class Unit:
 
         self.f.tight_layout(pad=0.8, w_pad=0.5, h_pad=1.0)
         self.canvas = FigureCanvasTkAgg(self.f, master=self.frame1)
-        self.canvas.get_tk_widget().grid(row=8, column=0, columnspan=2)
+        self.canvas.get_tk_widget().grid(row=9, column=0, columnspan=2)
 
         # status bar #
 #Todo : zorg dat de status txt wordt geupdate afhankelijk van de status van de lampjes (groen/bewegend/rood)
-        self.status = Label(self.frame1, text="status text", bd=2, relief=SUNKEN, pady=15, padx=50).grid(row=9, column=0, columnspan=2)
+        self.status = Label(self.frame1, text="status text", bd=2, relief=SUNKEN, pady=15, padx=50).grid(row=10, column=0, columnspan=2)
