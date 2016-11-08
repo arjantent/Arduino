@@ -1,6 +1,5 @@
 # Begin of Imports #
-from tkinter import *
-
+from tkinter import*
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
@@ -8,16 +7,43 @@ import matplotlib.pyplot as plt
 plt.matplotlib.use("TkAgg")
 # End of Imports #
 
+
+
 class Unit:
+
+
     def __init__(self, master):         # constructor
 
         self.frame1 = Frame(master)
         self.frame1.pack(side=LEFT)
 
-        def test123():
-            print("")
-
         print("test frame")
+
+        self.uitrollen = StringVar()
+        self.inrollen = StringVar()
+
+        def uitrolafstand():
+
+            try:
+                self.uitrolwaarde = int(self.uitrollen.get())
+                print(self.uitrolwaarde)
+                return
+            except ValueError:
+                print("INTEGER KUT")
+
+        def inrolafstand():
+
+            try:
+                self.inrolwaarde = int(self.inrollen.get())
+                print(self.inrolwaarde)
+                return self.inrolwaarde
+            except ValueError:
+                print("INTEGER KUT")
+
+
+        def submitten():
+            uitrolafstand()
+            inrolafstand()
 
         # Checkbutton #
 
@@ -33,8 +59,8 @@ class Unit:
 
         print("test label")
         # Entry #
-        self.Extend_Entry = Entry(self.frame1).grid(row=2, column=1, sticky=W)
-        self.Retract_Entry = Entry(self.frame1).grid(row=3, column=1, sticky=W)
+        self.Extend_Entry = Entry(self.frame1, textvariable=self.uitrollen).grid(row=2, column=1, sticky=W)
+        self.Retract_Entry = Entry(self.frame1, textvariable=self.inrollen).grid(row=3, column=1, sticky=W)
         self.Temperture_Entry = Entry(self.frame1).grid(row=5, column=1, sticky=W)
         self.LightIntensity_Entry = Entry(self.frame1).grid(row=6, column=1, sticky=W)
         print("test entry")
@@ -42,7 +68,7 @@ class Unit:
         # Buttons #
         self.A = Button(self.frame1, text="Inrollen", padx=10, pady=20).grid(row=7, column=0, sticky=E)   # inrol knop
         self.B = Button(self.frame1, text="Uitrollen", padx=10, pady=20).grid(row=7, column=1, sticky=W)  # uitrol knop
-        self.C = Button(self.frame1, text="Submit", padx=10, pady=5, command = COM3.rolluit()).grid(row=4, column=0, sticky=E)      # submit knop
+        self.C = Button(self.frame1, text="Submit", padx=10, pady=5, command=submitten).grid(row=4, column=0, sticky=E)      # submit knop
 
 
 
@@ -70,3 +96,5 @@ class Unit:
         # status bar #
 #Todo : zorg dat de status txt wordt geupdate afhankelijk van de status van de lampjes (groen/bewegend/rood)
         self.status = Label(self.frame1, text="status text", bd=2, relief=SUNKEN, pady=15, padx=50).grid(row=9, column=0, columnspan=2)
+
+
