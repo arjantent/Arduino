@@ -1,0 +1,45 @@
+        self.uitrollen = StringVar()
+        self.inrollen = StringVar()
+
+        self.temperatuur = StringVar()
+        self.lichtint = StringVar()
+        
+        def uitrolafstand():
+            try:
+                self.uitrolwaarde = int(self.uitrollen.get())
+                print(self.uitrolwaarde)
+                return
+            except ValueError:
+                print("INTEGER KUT")
+
+        def inrolafstand():
+            try:
+                self.inrolwaarde = int(self.inrollen.get())
+                print(self.inrolwaarde)
+                return self.inrolwaarde
+            except ValueError:
+                print("INTEGER KUT")
+
+        def submitten():
+            uitrolafstand()
+            inrolafstand()
+
+        def temperatuur():
+            try:
+                self.temperatuurwaarde = int(self.temperatuur.get())
+                print(self.temperatuurwaarde)
+                return
+            except ValueError:
+                print("Verkeerde waarde")
+
+        def lichtint():
+            try:
+                self.lichtwaarde = int(self.lichtint.get())
+                print(self.lichtwaarde)
+                return
+            except ValueError:
+                print("Verkeerde waarde")
+
+        def submitten2():
+            temperatuur()
+            lichtint()
