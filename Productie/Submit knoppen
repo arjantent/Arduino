@@ -10,7 +10,7 @@
                 print(self.uitrolwaarde)
                 return
             except ValueError:
-                print("INTEGER KUT")
+                print("Ongeldige waarde")
 
         def inrolafstand():
             try:
@@ -18,7 +18,7 @@
                 print(self.inrolwaarde)
                 return self.inrolwaarde
             except ValueError:
-                print("INTEGER KUT")
+                print("Ongeldige waarde")
 
         def submitten():
             uitrolafstand()
@@ -30,7 +30,7 @@
                 print(self.temperatuurwaarde)
                 return
             except ValueError:
-                print("Verkeerde waarde")
+                print("Ongeldige waarde")
 
         def lichtint():
             try:
@@ -38,7 +38,7 @@
                 print(self.lichtwaarde)
                 return
             except ValueError:
-                print("Verkeerde waarde")
+                print("Ongeldige waarde")
 
         def submitten2():
             temperatuur()
