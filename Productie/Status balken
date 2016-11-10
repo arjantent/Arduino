@@ -1,0 +1,14 @@
+self.getal = self.lux_val
+self.var2 = (str(self.getal))
+self.tp = StringVar()
+self.tp.set(self.var2)
+
+self.getal2 = self.temp_val
+self.var3 = (str(self.temp_val))
+self.lx = StringVar()
+self.lx.set(self.var3)
+
+# status bar #
+self.status = Label(self.frame1, textvariable=self.var, bd=2, width=8, relief=SUNKEN, pady=15, padx=50).grid(row=10, column=0, columnspan=1)
+self.status_lux = Label(self.frame1, textvariable=self.tp, bd=2, width=8,  relief=SUNKEN, pady=15, padx=50).grid(row=10, column=1, columnspan=1)
+self.status_temp = Label(self.frame1, textvariable=self.lx, bd=2, width=8, relief=SUNKEN, pady=15, padx=50).grid(row=11, column=0, columnspan=1)
